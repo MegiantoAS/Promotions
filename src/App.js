@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import './App.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FiDownload } from 'react-icons/fi';
 
 import appImage1 from './asset/wel-image.png';
 import appImage2 from './asset/lp-image.png';
@@ -10,7 +11,9 @@ import appImage3 from './asset/rute-image.png';
 import appImage4 from './asset/detec-image.png';
 import appImage5 from './asset/home-image.png';
 import appImage6 from './asset/lap-image.png';
+import appImage7 from './asset/rec-image.png';
 
+import appImage8 from './asset/allapp-image.png';
 import logo1 from './asset/atcs-logo.png';
 import logo2 from './asset/dishub-logo.png';
 import logo3 from './asset/bmkg-logo.png';
@@ -37,6 +40,7 @@ const App = () => {
     "Dengan Aplikasi Traffic Tracking", // Untuk appImage2
     "Tersedia peta penyebaran kemacetan", // Untuk appImage3
     "Deteksi Kemacetan melalui CCTV", // Untuk appImage4
+    "Rekomendasi hindari kemacetan", // Untuk appImage7
     "Informasi Lalu lintas", // Untuk appImage5
     "Dapat membuat laporan kepada prasarana jalan", // Untuk appImage6
   ];
@@ -45,8 +49,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <header>
-        <button onClick={handleDownloadClick}>Download Aplikasi</button>
+      <header>  
       </header>
       <main>
         <section className="promo-section">
@@ -66,6 +69,9 @@ const App = () => {
             <div>
               <img src={appImage4} alt="Aplikasi Screenshot" className="app-image" />
             </div>
+            <div>
+              <img src={appImage7} alt="Aplikasi Screenshot" className="app-image" />
+            </div>
             <div className="center">
               <img src={appImage5} alt="Aplikasi Screenshot" className="app-image" />
             </div>
@@ -75,11 +81,18 @@ const App = () => {
             {/* Tambahkan div dan img untuk setiap foto aplikasinya */}
           </Slider>
           <div className="app-description">
-            <h2>{currentCaption}</h2>
+          <h2>{currentCaption}</h2>
+          <img src={appImage8} alt="Download Aplikasi" className="button-image" />
+
             <p>
               Nikmati kenyamanan berkendara dengan Aplikasi Lalu Lintas yang dilengkapi kecerdasan buatan (AI). Aplikasi ini memberikan deteksi kemacetan real-time melalui kamera lalu lintas dan sensor, serta laporan kemacetan yang andal dari pengguna. Selain itu, informasi terperinci tentang penyebab kemacetan, prediksi waktu pulihnya, dan informasi cuaca akan membantu pengemudi merencanakan perjalanan dengan lebih bijaksana. Antarmuka user-friendly yang intuitif juga memastikan pengalaman navigasi yang lancar. Bergabunglah sekarang dan nikmati perjalanan tanpa hambatan!
             </p>
-            <button onClick={handleDownloadClick}>Download Aplikasi</button>
+         
+          </div>
+          <div className="button-container">
+            <button onClick={handleDownloadClick}>
+              <FiDownload /> Download Aplikasi
+            </button>
           </div>
         </section>
       </main>
